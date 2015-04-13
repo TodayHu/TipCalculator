@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Tip_Calculator_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" alignment="left" text="Cost of Meal:" id="0pQ-NG-rzH"/>
+                        <label width="1" alignment="left" text="$25" textAlignment="center" id="VbA-kX-D8G"/>
+                        <slider width="1" alignment="left" continuous="YES" value="5" minimum="5" maximum="100" steps="19" id="gzt-7s-WH8">
+                            <connections>
+                                <action selector="sliderChanged:" destination="AgC-eL-Hgc" id="uHc-R6-8rw"/>
+                            </connections>
+                        </slider>
+                        <separator alignment="left" id="zZt-Ht-MZh"/>
+                        <label alignment="left" text="Tip:" id="p0P-M2-pdw"/>
+                        <group width="1" alignment="left" id="2k1-8i-noi">
+                            <items>
+                                <button width="0.33333333333333331" alignment="left" title="10%" id="7kY-bJ-djB">
+                                    <connections>
+                                        <action selector="tenTapped" destination="AgC-eL-Hgc" id="6sE-dj-dmX"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33333333333333298" alignment="left" title="15%" id="orb-bZ-ATa">
+                                    <connections>
+                                        <action selector="fifteenTapped" destination="AgC-eL-Hgc" id="ohZ-sC-fLT"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33333333333333298" alignment="left" title="20%" id="g6z-1T-wkJ">
+                                    <connections>
+                                        <action selector="twentyTapped" destination="AgC-eL-Hgc" id="YUB-oT-MkH"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="dollarLabel" destination="VbA-kX-D8G" id="GvA-28-m1t"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+        <!--resultsController-->
+        <scene sceneID="ESf-CM-bjc">
+            <objects>
+                <controller identifier="resultsController" id="mAK-Rp-8F2" customClass="ResultsController" customModule="Tip_Calculator_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Cost of Meal:" id="nsL-iZ-dDE"/>
+                        <label width="1" alignment="left" text="$25" textAlignment="right" id="TwO-hY-zfZ"/>
+                        <label alignment="left" text="20% Tip:" id="uvY-R6-8yr"/>
+                        <label width="1" alignment="left" text="$5" textAlignment="right" id="tag-s6-hMe"/>
+                        <label alignment="left" text="Total:" id="tQs-Bm-r7T"/>
+                        <label width="1" alignment="left" text="$30" textAlignment="right" id="GIz-fI-MRb"/>
+                    </items>
+                    <connections>
+                        <outlet property="costOfMealLabel" destination="TwO-hY-zfZ" id="9d5-30-bfP"/>
+                        <outlet property="tipDollarAmountLabel" destination="tag-s6-hMe" id="5ss-Oa-vku"/>
+                        <outlet property="tipLabel" destination="uvY-R6-8yr" id="fNd-7B-zt3"/>
+                        <outlet property="totalLabel" destination="GIz-fI-MRb" id="ZxH-I8-zoF"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="555" y="136"/>
+        </scene>
+    </scenes>
+</document>
